@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Cloning Repository') {
+        stage('Clone Repository') {
             steps {
                 // Clone the repository
                 git branch: 'main', url: 'https://github.com/KavyaPotturi/Python-App.git'
