@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/your-repo/sample-app.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                // Install Python dependencies
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Run Application') {
+            steps {
+                // Start the application
+                sh 'nohup python app.py &'
+            }
+        }
+    }
+}
